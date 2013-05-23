@@ -23,6 +23,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		1A1058A8174EB32D005328AB /* NSFileManager+AppSupp.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1058A7174EB32D005328AB /* NSFileManager+AppSupp.m */; };
 		5A0D2E570C922AB700FD7CDE /* File.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A0D2E560C922AB700FD7CDE /* File.m */; };
 		5A0D2E5D0C922D6D00FD7CDE /* ImageOptim.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A0D2E5C0C922D6D00FD7CDE /* ImageOptim.m */; };
 		5A0FA76214A7EFCB008FA381 /* pngout in Copy Executables */ = {isa = PBXBuildFile; fileRef = 5A0FA76114A7EFCB008FA381 /* pngout */; };
@@ -298,6 +299,8 @@
 /* Begin PBXFileReference section */
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+		1A1058A6174EB32D005328AB /* NSFileManager+AppSupp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+AppSupp.h"; sourceTree = "<group>"; };
+		1A1058A7174EB32D005328AB /* NSFileManager+AppSupp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+AppSupp.m"; sourceTree = "<group>"; };
 		1B5210E316BFA7C90044C869 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "zh-Hant"; path = "zh-Hant.lproj/Help"; sourceTree = "<group>"; };
 		1B5210E416BFA7CA0044C869 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = "zh-Hant"; path = "zh-Hant.lproj/Credits.rtf"; sourceTree = "<group>"; };
 		1B5210E516BFA7CA0044C869 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -468,6 +471,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				1A1058A5174EB2E2005328AB /* Categories */,
 				5AE54DE50CAEF51300903DF4 /* Workers */,
 				5A34A632140EEDB900DE44D2 /* DragDropImageView.h */,
 				5A34A633140EEDB900DE44D2 /* DragDropImageView.m */,
@@ -516,6 +520,15 @@
 				5A44976911303B01006EAA56 /* ImageOptim.tar.bz2 */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		1A1058A5174EB2E2005328AB /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				1A1058A6174EB32D005328AB /* NSFileManager+AppSupp.h */,
+				1A1058A7174EB32D005328AB /* NSFileManager+AppSupp.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 		29B97314FDCFA39411CA2CEA /* ImageOptim */ = {
@@ -1029,6 +1042,7 @@
 				5A8A18141416D1D700D62DB7 /* SavingsFormatter.m in Sources */,
 				5AACA8310CAFE74E004D45CA /* Transformers.m in Sources */,
 				5AACA13F0CAF241B004D45CA /* Worker.m in Sources */,
+				1A1058A8174EB32D005328AB /* NSFileManager+AppSupp.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
