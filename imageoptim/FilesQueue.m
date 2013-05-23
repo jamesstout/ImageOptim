@@ -27,8 +27,6 @@ NSString *busyFileName = @"/ImageOptim.lock";
 -(id)initWithTableView:(NSTableView*)inTableView progressBar:(NSProgressIndicator *)inBar andController:(NSArrayController*)inController
 {
     
-    NSLog(@"initWithTableView");
-
     if (self = [super init]) {
         progressBar = inBar;
         filesController = inController;
@@ -555,16 +553,16 @@ NSString *busyFileName = @"/ImageOptim.lock";
 {
 	if (![self isAnyQueueBusy])
 	{
-        [self removeBusyFile];
+		[self removeBusyFile];
 		[progressBar stopAnimation:nil];
 		[NSApp requestUserAttention:NSInformationalRequest];
 		[tableView setNeedsDisplay:YES];
 	}
 	else
 	{
-        [self writeBusyFile];
+		[self writeBusyFile];
 		[progressBar startAnimation:nil];
-        [self waitInBackgroundForQueuesToFinish];
+		[self waitInBackgroundForQueuesToFinish];
 	}
 }
 
