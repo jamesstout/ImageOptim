@@ -6,6 +6,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import <Quartz/Quartz.h>
+#import "NSFileManager+AppSupp.h"
 
 @class File;
 
@@ -13,6 +14,9 @@
 	NSTableView *tableView;
 	NSArrayController *filesController;
 	BOOL isEnabled;
+    
+    NSString *busyFilePath;
+
 	NSInteger nextInsertRow;
 	NSOperationQueue *cpuQueue;
     NSOperationQueue *fileIOQueue;
@@ -38,6 +42,9 @@
 - (NSUInteger)rowsAboveRow:(NSUInteger)row inIndexSet:(NSIndexSet *)indexSet;
 - (NSUInteger)numberOfRowsInTableView:(NSTableView *)tableview;
 
+-(void)removeBusyFile;
+-(void)writeBusyFile;
+
 -(void)runAdded;
 -(void)startAgainOptimized:(BOOL)optimized;
 -(BOOL)canStartAgainOptimized:(BOOL)optimized;
@@ -53,4 +60,7 @@
 -(void)openRowInFinder:(NSInteger)row withPreview:(BOOL)preview;
 
 -(NSArray *)fileTypes;
+
+@property (strong, nonatomic) NSString *busyFilePath;
+
 @end

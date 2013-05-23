@@ -18,43 +18,54 @@
 -(void)deleteObjects:(NSArray*)objects;
 @end
 
+NSString *busyFileName = @"/ImageOptim.lock";
 
 @implementation FilesQueue
 
+@synthesize busyFilePath;
+
 -(id)initWithTableView:(NSTableView*)inTableView progressBar:(NSProgressIndicator *)inBar andController:(NSArrayController*)inController
 {
+    
+    NSLog(@"initWithTableView");
+
     if (self = [super init]) {
-	progressBar = inBar;
-	filesController = inController;
-	tableView = inTableView;
-	seenPathHashes = [[NSHashTable alloc] initWithOptions:NSHashTableZeroingWeakMemory capacity:1000];
-
-	NSUserDefaults *defs = [NSUserDefaults standardUserDefaults];
-
-    cpuQueue = [NSOperationQueue new];
-    [cpuQueue setMaxConcurrentOperationCount:[defs integerForKey:@"RunConcurrentTasks"]];
-
-	dirWorkerQueue = [NSOperationQueue new];
-    [dirWorkerQueue setMaxConcurrentOperationCount:[defs integerForKey:@"RunConcurrentDirscans"]];
-
-	fileIOQueue = [NSOperationQueue new];
-    NSUInteger fileops = [defs integerForKey:@"RunConcurrentFileops"];
-    [fileIOQueue setMaxConcurrentOperationCount:fileops?fileops:2];
-
-    queueWaitingLock = [NSLock new];
-
-	[tableView setDelegate:self];
-	[tableView setDataSource:self];
-	[tableView registerForDraggedTypes:[NSArray arrayWithObject:NSFilenamesPboardType]];
-
-	[self setEnabled:YES];
+        progressBar = inBar;
+        filesController = inController;
+        tableView = inTableView;
+        seenPathHashes = [[NSHashTable alloc] initWithOptions:NSHashTableZeroingWeakMemory capacity:1000];
+        
+        // Returns the path for Library/Application Support/<AppName> and creates it if it does not exist
+        self.busyFilePath = [[[NSFileManager defaultManager] appSuppPath] stringByAppendingString:busyFileName];
+        
+        [self removeBusyFile];
+        
+        NSUserDefaults *defs = [NSUserDefaults standardUserDefaults];
+        
+        cpuQueue = [NSOperationQueue new];
+        [cpuQueue setMaxConcurrentOperationCount:[defs integerForKey:@"RunConcurrentTasks"]];
+        
+        dirWorkerQueue = [NSOperationQueue new];
+        [dirWorkerQueue setMaxConcurrentOperationCount:[defs integerForKey:@"RunConcurrentDirscans"]];
+        
+        fileIOQueue = [NSOperationQueue new];
+        NSUInteger fileops = [defs integerForKey:@"RunConcurrentFileops"];
+        [fileIOQueue setMaxConcurrentOperationCount:fileops?fileops:2];
+        
+        queueWaitingLock = [NSLock new];
+        
+        [tableView setDelegate:self];
+        [tableView setDataSource:self];
+        [tableView registerForDraggedTypes:[NSArray arrayWithObject:NSFilenamesPboardType]];
+        
+        [self setEnabled:YES];
     }
 	return self;
 }
 
 
 -(BOOL)isAnyQueueBusy
-{
+{    
 	if ([dirWorkerQueue respondsToSelector:@selector(operationCount)])
 	{
 		assert(NSFoundationVersionNumber >= (1.0+kCFCoreFoundationVersionNumber10_5));
@@ -112,6 +123,7 @@
 
 -(void)cleanup {
     isEnabled = NO;
+    [self removeBusyFile];
     [dirWorkerQueue cancelAllOperations];
     [fileIOQueue cancelAllOperations];
     [cpuQueue cancelAllOperations];
@@ -363,7 +375,7 @@
     {
         return nil;
     }
-
+    
     for(File *f in [filesController content])
 	{
 		if ([path isEqualToString:[f filePath]])
@@ -518,16 +530,39 @@
 	[self runAdded];
 }
 
+
+-(void)writeBusyFile{
+    
+    if( ![[NSFileManager defaultManager] fileExistsAtPath:self.busyFilePath]){
+        if(![[NSFileManager defaultManager] createFileAtPath:self.busyFilePath contents:[NSData data] attributes:nil]){
+            NSLog(@"Unable to create %@. Check file permissions.", self.busyFilePath);
+        }
+    }
+}
+
+-(void)removeBusyFile{
+        
+    NSError *error = nil;
+    
+    if( [[NSFileManager defaultManager] fileExistsAtPath:self.busyFilePath]){
+        if(![[NSFileManager defaultManager] removeItemAtPath:self.busyFilePath error:&error]){
+            NSLog(@"Unable to remove %@. Check file permissions. Error was %@", self.busyFilePath, error);
+        }        
+    }
+}
+
 -(void)updateProgressbar
 {
 	if (![self isAnyQueueBusy])
 	{
+        [self removeBusyFile];
 		[progressBar stopAnimation:nil];
 		[NSApp requestUserAttention:NSInformationalRequest];
 		[tableView setNeedsDisplay:YES];
 	}
 	else
 	{
+        [self writeBusyFile];
 		[progressBar startAnimation:nil];
         [self waitInBackgroundForQueuesToFinish];
 	}
