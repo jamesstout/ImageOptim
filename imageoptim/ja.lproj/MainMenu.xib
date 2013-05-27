@@ -2,13 +2,13 @@
 <archive type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="8.00">
 	<data>
 		<int key="IBDocument.SystemTarget">1060</int>
-		<string key="IBDocument.SystemVersion">12A269</string>
-		<string key="IBDocument.InterfaceBuilderVersion">2549</string>
-		<string key="IBDocument.AppKitVersion">1187</string>
-		<string key="IBDocument.HIToolboxVersion">624.00</string>
+		<string key="IBDocument.SystemVersion">12D78</string>
+		<string key="IBDocument.InterfaceBuilderVersion">3084</string>
+		<string key="IBDocument.AppKitVersion">1187.37</string>
+		<string key="IBDocument.HIToolboxVersion">626.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin</string>
-			<string key="NS.object.0">2549</string>
+			<string key="NS.object.0">3084</string>
 		</object>
 		<array key="IBDocument.IntegratedClassDependencies">
 			<string>NSArrayController</string>
@@ -262,7 +262,7 @@
 																<bool key="NS.raise.dividebyzero">YES</bool>
 															</object>
 															<string key="NS.decimal">.</string>
-															<string type="base64-UTF8" key="NS.thousand">wqA</string>
+															<string key="NS.thousand">,</string>
 															<bool key="NS.hasthousands">YES</bool>
 															<bool key="NS.localized">YES</bool>
 															<bool key="NS.allowsfloats">YES</bool>
@@ -322,7 +322,7 @@
 																<bool key="NS.raise.dividebyzero">YES</bool>
 															</object>
 															<string key="NS.decimal">.</string>
-															<string type="base64-UTF8" key="NS.thousand">wqA</string>
+															<string key="NS.thousand">,</string>
 															<bool key="NS.hasthousands">YES</bool>
 															<bool key="NS.localized">YES</bool>
 															<bool key="NS.allowsfloats">YES</bool>
@@ -386,7 +386,7 @@
 																<bool key="NS.raise.dividebyzero">YES</bool>
 															</object>
 															<string key="NS.decimal">.</string>
-															<string type="base64-UTF8" key="NS.thousand">wqA</string>
+															<string key="NS.thousand">,</string>
 															<bool key="NS.hasthousands">YES</bool>
 															<bool key="NS.localized">YES</bool>
 															<bool key="NS.allowsfloats">YES</bool>
@@ -1284,7 +1284,7 @@
 												<int key="NSTCFlags">1</int>
 											</object>
 											<object class="NSTextViewSharedData" key="NSSharedData">
-												<int key="NSFlags">33556485</int>
+												<int key="NSFlags">100665349</int>
 												<int key="NSTextCheckingTypes">0</int>
 												<nil key="NSMarkedAttributes"/>
 												<object class="NSColor" key="NSBackgroundColor" id="504455196">
@@ -1321,6 +1321,7 @@
 											</object>
 											<int key="NSTVFlags">6</int>
 											<string key="NSMaxSize">{575, 10000000}</string>
+											<string key="NSMinize">{295, 228}</string>
 											<nil key="NSDelegate"/>
 										</object>
 									</array>
@@ -1458,7 +1459,7 @@
 							<bool key="NS.raise.dividebyzero">YES</bool>
 						</object>
 						<string key="NS.decimal">.</string>
-						<string type="base64-UTF8" key="NS.thousand">wqA</string>
+						<string key="NS.thousand">,</string>
 						<bool key="NS.hasthousands">YES</bool>
 						<bool key="NS.localized">YES</bool>
 						<bool key="NS.allowsfloats">YES</bool>

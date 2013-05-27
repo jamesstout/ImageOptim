@@ -196,3 +196,5 @@ zlib/projects
 zlib/qnx
 zlib/README
 zlib/win32
+tx-*.log
+Makefile-nolib

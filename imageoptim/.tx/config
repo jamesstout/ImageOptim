@@ -1,0 +1,126 @@
+[main]
+host = https://www.transifex.com
+
+[imageoptim.mainmenustrings]
+file_filter = */MainMenu.strings
+source_file = en.lproj/MainMenu.strings
+source_lang = en
+type = STRINGS
+trans.da = da.lproj/MainMenu.strings
+trans.de = de.lproj/MainMenu.strings
+trans.es = es.lproj/MainMenu.strings
+trans.fr = fr.lproj/MainMenu.strings
+trans.it = it.lproj/MainMenu.strings
+trans.ja = ja.lproj/MainMenu.strings
+trans.nl = nl.lproj/MainMenu.strings
+trans.no = no.lproj/MainMenu.strings
+trans.pl = pl.lproj/MainMenu.strings
+trans.pt_BR = pt-BR.lproj/MainMenu.strings
+trans.pt = pt.lproj/MainMenu.strings
+trans.ru = ru.lproj/MainMenu.strings
+trans.sv = sv.lproj/MainMenu.strings
+trans.zh_CN = zh-Hant.lproj/MainMenu.strings
+trans.el = el.lproj/MainMenu.strings
+trans.en_GB = en-GB.lproj/MainMenu.strings
+trans.lt = lt.lproj/MainMenu.strings
+trans.lt_LT = lt-LT.lproj/MainMenu.strings
+
+[imageoptim.prefsstrings]
+file_filter = */Prefs.strings
+source_file = en.lproj/Prefs.strings
+source_lang = en
+type = STRINGS
+trans.da = da.lproj/Prefs.strings
+trans.de = de.lproj/Prefs.strings
+trans.es = es.lproj/Prefs.strings
+trans.fr = fr.lproj/Prefs.strings
+trans.it = it.lproj/Prefs.strings
+trans.ja = ja.lproj/Prefs.strings
+trans.nl = nl.lproj/Prefs.strings
+trans.no = no.lproj/Prefs.strings
+trans.pl = pl.lproj/Prefs.strings
+trans.pt_BR = pt-BR.lproj/Prefs.strings
+trans.pt = pt.lproj/Prefs.strings
+trans.ru = ru.lproj/Prefs.strings
+trans.sv = sv.lproj/Prefs.strings
+trans.zh_CN = zh-Hant.lproj/Prefs.strings
+trans.el = el.lproj/Prefs.strings
+trans.en_GB = en-GB.lproj/Prefs.strings
+trans.lt = lt.lproj/Prefs.strings
+trans.lt_LT = lt-LT.lproj/Prefs.strings
+
+[imageoptim.localizablestrings]
+file_filter = */Localizable.strings
+source_file = en.lproj/Localizable.strings
+source_lang = en
+type = STRINGS
+trans.da = da.lproj/Localizable.strings
+trans.de = de.lproj/Localizable.strings
+trans.es = es.lproj/Localizable.strings
+trans.fr = fr.lproj/Localizable.strings
+trans.it = it.lproj/Localizable.strings
+trans.ja = ja.lproj/Localizable.strings
+trans.nl = nl.lproj/Localizable.strings
+trans.no = no.lproj/Localizable.strings
+trans.pl = pl.lproj/Localizable.strings
+trans.pt_BR = pt-BR.lproj/Localizable.strings
+trans.pt = pt.lproj/Localizable.strings
+trans.ru = ru.lproj/Localizable.strings
+trans.sv = sv.lproj/Localizable.strings
+trans.zh_CN = zh-Hant.lproj/Localizable.strings
+trans.el = el.lproj/Localizable.strings
+trans.en_GB = en-GB.lproj/Localizable.strings
+trans.lt = lt.lproj/Localizable.strings
+trans.lt_LT = lt-LT.lproj/Localizable.strings
+
+
+#[imageoptim.helpindexhtml]
+#file_filter = */Help/index.html
+#source_file = en.lproj/Help/index.html
+#source_lang = en
+#type = HTML
+#trans.da = da.lproj/Help/index.html
+#trans.de = de.lproj/Help/index.html
+#trans.es = es.lproj/Help/index.html
+#trans.fr = fr.lproj/Help/index.html
+#trans.it = it.lproj/Help/index.html
+#trans.ja = ja.lproj/Help/index.html
+#trans.nl = nl.lproj/Help/index.html
+#trans.no = no.lproj/Help/index.html
+#trans.pl = pl.lproj/Help/index.html
+#trans.pt_BR = pt-BR.lproj/Help/index.html
+#trans.pt = pt.lproj/Help/index.html
+#trans.ru = ru.lproj/Help/index.html
+#trans.sv = sv.lproj/Help/index.html
+#trans.zh_CN = zh-Hant.lproj/Help/index.html
+#trans.el = el.lproj/Help/index.html
+#trans.en_GB = en-GB.lproj/Help/index.html
+#trans.lt = lt.lproj/Help/index.html
+#trans.lt_LT = lt-LT.lproj/Help/index.html
+#
+#[imageoptim.help-prefshtml]
+#file_filter = */Help/prefs.html
+#source_file = en.lproj/Help/prefs.html
+#source_lang = en
+#type = HTML
+#trans.da = da.lproj/Help/prefs.html
+#trans.de = de.lproj/Help/prefs.html
+#trans.es = es.lproj/Help/prefs.html
+#trans.fr = fr.lproj/Help/prefs.html
+#trans.it = it.lproj/Help/prefs.html
+#trans.ja = ja.lproj/Help/prefs.html
+#trans.nl = nl.lproj/Help/prefs.html
+#trans.no = no.lproj/Help/prefs.html
+#trans.pl = pl.lproj/Help/prefs.html
+#trans.pt_BR = pt-BR.lproj/Help/prefs.html
+#trans.pt = pt.lproj/Help/prefs.html
+#trans.ru = ru.lproj/Help/prefs.html
+#trans.sv = sv.lproj/Help/prefs.html
+#trans.zh_CN = zh-Hant.lproj/Help/prefs.html
+#trans.el = el.lproj/Help/prefs.html
+#trans.en_GB = en-GB.lproj/Help/prefs.html
+#trans.lt = lt.lproj/Help/prefs.html
+#trans.lt_LT = lt-LT.lproj/Help/prefs.html
+
+
+
